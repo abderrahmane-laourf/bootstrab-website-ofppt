@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFPPT</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .video-header {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+            /* Adjust as needed */
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Cover the entire header area */
+        }
+
+        .video-filter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(4, 4, 71, 0.438), rgba(0, 0, 0, 0.712));
+            /* Your gradient */
+            z-index: 1;
+            /* Place the filter above the video */
+        }
+
+        /* Header Styles */
+        .header-content {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            transition: all 0.3s ease; /* Add transition for all properties */
+            padding: 20px 0; /* Add some padding initially */
+        }
+
+        .header-content.scrolled {
+            background-color: rgba(0, 0, 5, 0.7); /* Darker background on scroll */
+            padding: 10px 0; /* Reduce padding on scroll */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+        }
+
+        .header-content .navbar-brand img {
+            height: 50px; 
+            transition: height 0.3s ease; 
+        }
+
+        .header-content.scrolled .navbar-brand img {
+            height: 40px; 
+        }
+
+        .header-content .navbar-nav .nav-link {
+            color: white;
+            font-weight: 500;
+            margin: 0 15px;
+            text-transform: uppercase; 
+            transition: color 0.3s ease; 
+        }
+
+        .header-content .navbar-nav .nav-link:hover,
+        .header-content .navbar-nav .nav-link:focus {
+            color: #0d6efd; 
+        }
+
+        .header-content.scrolled .navbar-nav .nav-link {
+            color: #ddd;
+        }
+
+        /* Button Styles */
+        .header-content .btn {
+            margin-left: 15px;
+        }
+
+        /* Dropdown Styles */
+        .header-content .dropdown-menu {
+            background-color: rgba(0, 0, 5, 0.9); /* Match header background */
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-content .dropdown-item {
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .header-content .dropdown-item:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 140px;
+            width: 100%;
+            color: rgba(255, 255, 255, 0.932);
+            z-index: 2;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 10px;
+            text-align: center;
+        }
+
+        body {
+            height: 1500px;
+        }
+        .section-bg{
+            background-color: rgb(245, 245, 245);
+            padding: 40px 0;
+        }
+        .card-title{
+          font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="video-header">
+        <video autoplay muted loop>
+            <source src="/video/OFPPT - Une formation de qualité pour des métiers d'avenir.mp4" type="video/mp4">
+        </video>
+        <div class="video-filter"></div>
+        <header class="header-content">
+          <nav class="navbar navbar-expand-lg">
+            <div class="container">
+              <!-- Logo -->
+              <a class="navbar-brand" href="#">
+                <img src="/image/OFPPT_Logo.png" alt="OFPPT Logo" class="img-fluid">
+              </a>
+      
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                  
+                  <li class="nav-item">
+                    <a class="nav-link btn btn-outline-success" href="#">Support Team</a>
+                  </li>
+      
+                  <li class="nav-item dropdown">
+                    <a class="nav-link btn btn-outline-primary dropdown-toggle" href="#" id="offresEmploiDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Offres d'emploi
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="offresEmploiDropdown">
+                      <a class="dropdown-item" href="#">Social Media Hub</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </li>
+      
+                  <!-- About OFPPT Dropdown -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link btn btn-outline-primary dropdown-toggle" href="#" id="aboutOFPPTDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      About OFPPT
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="aboutOFPPTDropdown">
+                      <a class="dropdown-item" href="#">Action</a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                  </li>
+      
+                  <!-- Capital Humain Dropdown -->
+                  <li class="nav-item dropdown">
+                    <a class="nav-link btn btn-outline-primary dropdown-toggle" href="#" id="capitalHumainDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Capital Humain
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="capitalHumainDropdown">
+                      <a class="dropdown-item" href="#">Notre capital humain</a>
+                      <a class="dropdown-item" href="#">Offres d'emploi</a>
+                      <a class="dropdown-item" href="#">Retraités</a>
+                    </div>
+                  </li>
+      
+                  <!-- Login Button -->
+                  <li class="nav-item">
+                    <a class="nav-link btn btn-primary" href="#">Login</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+    </section>
+
+ 
+    <section class="content">
+        <h1 class="p-2 text-center">ISTA TAN-TAN</h1>
+        <h6>STA Tan-Tan (Institut Spécialisé de Technologie Appliquée de Tan-Tan) is a public vocational training institution in Tan-Tan, Morocco. It's part of the OFPPT network and provides practical, job-oriented training in various technical fields to equip students with the skills needed for successful careers in the region's growing industries.</h6>
+        <button class="btn btn-primary p-2 m-3" type="button" id="dropdownMenuButton2">
+            MORE .....
+        </button>
+    </section>
+    
+    <section class="container mt-5">
+      <div class="row">
+          <div class="col-md-6">
+              <p>This is your paragraph text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.</p>
+          </div>
+          <div class="col-md-6">
+              <img src="/image/1er-tranche-bourse-2019-2020.jpg" alt="Description of the image" class="img-fluid">
+          </div>
+      </div>
+  </section>
+
+    <!-- card -->
+
+    <section class="section-bg">
+      <div class="container">
+        <h2 class="text-center mb-5">Explore Our Programs</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <img src="/image/unnamed-4.png" class="card-img-top h-50" alt="Program 1">
+              <div class="card-body">
+                <h5 class="card-title">Development</h5>
+                <p class="card-text">Learn full-stack development with our comprehensive program covering HTML, CSS, JavaScript, and more.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <img src="/image/loubna tricha.png" class="card-img-top h-1 h-50" alt="Program 2">
+              <div class="card-body">
+                <h5 class="card-title">gestion d'entreprise</h5>
+                <p class="card-text">Master business administration with a focus on strategic management, finance, and operations.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <img src="/image/cheval.png" class="card-img-top h-50" alt="Program 3">
+              <div class="card-body">
+                <h5 class="card-title">Digital Marketing</h5>
+                <p class="card-text">Become a digital marketing expert with training in SEO, social media marketing, and content strategy.</p>
+                <a href="#" class="btn btn-primary">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About OFPPT</h5>
+            <p>OFPPT is the national leader in vocational training in Morocco, offering a wide range of programs designed to meet the needs of the job market.</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <ul class="list-unstyled">
+              <li><i class="fas fa-map-marker-alt"></i> Address: Route de Casablanca, Km 10, Rabat</li>
+              <li><i class="fas fa-phone"></i> Phone: +212 5 37 72 64 00</li>
+              <li><i class="fas fa-envelope"></i> Email: contact@ofppt.ma</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Follow Us</h5>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-twitter"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-instagram"></i></a></li>
+              <li class="list-inline-item"><a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="bg-light">
+        <div class="row">
+          <div class="col-12 text-center">
+            <p>© 2023 OFPPT. All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/5ea3755d65.js" crossorigin="anonymous"></script>
+
+    <script>
+      $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 20) {
+          $('.header-content').addClass('scrolled');
+        } else {
+          $('.header-content').removeClass('scrolled');
+        }
+      });
+    </script>
+</body>
+
+</html>
