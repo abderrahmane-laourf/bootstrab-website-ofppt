@@ -25,7 +25,7 @@ This project is a front-end web development showcase of the ISTA Tan-Tan (Instit
 
 1. **Clone the repository:**
     ```bash
-    git clone <repository_url> 
+    git clone  
     ```
 2. **Open `index.html`** in your preferred web browser. 🎉
 
