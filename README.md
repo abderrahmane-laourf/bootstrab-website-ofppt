@@ -20,7 +20,6 @@ This project is a front-end web development showcase of the ISTA Tan-Tan (Instit
 -   **Bootstrap 4.5.2:** 📱 For responsive design, grid system, and pre-built components.
 -   **Popper.js 1.16.1:** 💬 For tooltip and popover functionality (used by Bootstrap).
 -   **Font Awesome:** <i></i> For icons in the footer
--   
 ## Getting Started 🏁
 
 1. **Clone the repository:**
