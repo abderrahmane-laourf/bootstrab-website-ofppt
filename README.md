@@ -1,5 +1,4 @@
 # OFPPT Website - ISTA  Showcase ✨
-
 This project is a front-end web development showcase of the ISTA Tan-Tan (Institut Spécialisé de Technologie Appliquée de Tan-Tan), part of the OFPPT network in Morocco 🇲🇦. It features a dynamic and engaging user interface built with HTML, CSS, and JavaScript, leveraging the Bootstrap 4.5.2 framework for responsiveness and styling.
 
 ## Features 🚀
