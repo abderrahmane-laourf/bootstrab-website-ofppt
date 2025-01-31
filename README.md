@@ -4,6 +4,7 @@ This project is a front-end web development showcase of the ISTA Tan-Tan (Instit
 
 ## Features 🚀
 
+
 -   **Hero Section with Video Background:** 🎬 A visually captivating full-screen video header with a gradient overlay, creating an immersive user experience.
 -   **Sticky Navigation Bar:** ⬆️ A fixed navigation bar that changes style upon scrolling, enhancing usability and providing a modern aesthetic.
 -   **Responsive Design:** 📱💻 Fully responsive layout that adapts seamlessly to various screen sizes (desktops, tablets, and mobile devices), thanks to the Bootstrap framework.
